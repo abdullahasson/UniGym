@@ -1,26 +1,422 @@
 @import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --gold: #C5A47E;
+  --deep-navy: #0A1A2F;
+  --burgundy: #6A2E35;
+  --ivory: #F4F0EC;
+  --dark-charcoal: #2A2A2A;
+
+  
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-family: 'El Messiri', sans-serif;
+  direction: rtl;
+
+  
+  --radius: 0.625rem;
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.145 0 0);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.145 0 0);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.145 0 0);
+  --primary: oklch(0.205 0 0);
+  --primary-foreground: oklch(0.985 0 0);
+  --secondary: oklch(0.97 0 0);
+  --secondary-foreground: oklch(0.205 0 0);
+  --muted: oklch(0.97 0 0);
+  --muted-foreground: oklch(0.556 0 0);
+  --accent: oklch(0.97 0 0);
+  --accent-foreground: oklch(0.205 0 0);
+  --destructive: oklch(0.577 0.245 27.325);
+  --border: oklch(0.922 0 0);
+  --input: oklch(0.922 0 0);
+  --ring: oklch(0.708 0 0);
+  --chart-1: oklch(0.646 0.222 41.116);
+  --chart-2: oklch(0.6 0.118 184.704);
+  --chart-3: oklch(0.398 0.07 227.392);
+  --chart-4: oklch(0.828 0.189 84.429);
+  --chart-5: oklch(0.769 0.188 70.08);
+  --sidebar: oklch(0.985 0 0);
+  --sidebar-foreground: oklch(0.145 0 0);
+  --sidebar-primary: oklch(0.205 0 0);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.97 0 0);
+  --sidebar-accent-foreground: oklch(0.205 0 0);
+  --sidebar-border: oklch(0.922 0 0);
+  --sidebar-ring: oklch(0.708 0 0);
 }
 
 @theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+.dark {
+  --background: oklch(0.145 0 0);
+  --foreground: oklch(0.985 0 0);
+  --card: oklch(0.205 0 0);
+  --card-foreground: oklch(0.985 0 0);
+  --popover: oklch(0.205 0 0);
+  --popover-foreground: oklch(0.985 0 0);
+  --primary: oklch(0.922 0 0);
+  --primary-foreground: oklch(0.205 0 0);
+  --secondary: oklch(0.269 0 0);
+  --secondary-foreground: oklch(0.985 0 0);
+  --muted: oklch(0.269 0 0);
+  --muted-foreground: oklch(0.708 0 0);
+  --accent: oklch(0.269 0 0);
+  --accent-foreground: oklch(0.985 0 0);
+  --destructive: oklch(0.704 0.191 22.216);
+  --border: oklch(1 0 0 / 10%);
+  --input: oklch(1 0 0 / 15%);
+  --ring: oklch(0.556 0 0);
+  --chart-1: oklch(0.488 0.243 264.376);
+  --chart-2: oklch(0.696 0.17 162.48);
+  --chart-3: oklch(0.769 0.188 70.08);
+  --chart-4: oklch(0.627 0.265 303.9);
+  --chart-5: oklch(0.645 0.246 16.439);
+  --sidebar: oklch(0.205 0 0);
+  --sidebar-foreground: oklch(0.985 0 0);
+  --sidebar-primary: oklch(0.488 0.243 264.376);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.269 0 0);
+  --sidebar-accent-foreground: oklch(0.985 0 0);
+  --sidebar-border: oklch(1 0 0 / 10%);
+  --sidebar-ring: oklch(0.556 0 0);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
   }
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--ivory);
+  color: var(--dark-charcoal);
+  background:
+      linear-gradient(45deg, rgba(10, 26, 47, 0.9), rgba(10, 26, 47, 0.95)),
+      url('https://www.transparenttextures.com/patterns/dark-leather.png');
+}
+
+section {
+  border-bottom: 3px solid var(--gold);
+  padding: 80px 5%;
+}
+
+
+
+
+
+/* Global Class */
+.title {
+  font-size: 2.8rem;
+  color: var(--gold);
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+.title::after {
+  content: '';
+  position: absolute;
+  bottom: -1rem;
+  right: 0;
+  width: 120px;
+  height: 2px;
+  background: var(--gold);
+}
+
+@media (max-width: 768px) {
+  .title {
+      font-size: 2rem;
+  }
+}
+
+
+
+
+
+/* Hero Section */
+.luxury-hero {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 4rem;
+  position: relative;
+}
+
+.luxury-profile {
+  position: relative;
+  max-width: 550px;
+  perspective: 1000px;
+}
+
+.luxury-image {
+  width: 100%;
+  height: 650px;
+  border-radius: 5px;
+  object-fit: cover;
+  border: 3px solid var(--gold);
+  box-shadow: 0 30px 50px rgba(0, 0, 0, 0.3);
+  transform: rotateY(-5deg);
+  transition: 0.5s;
+}
+
+.luxury-content {
+  color: var(--ivory);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: start;
+  gap: 2.4rem;
+}
+
+.elegant-title {
+  font-size: 4.5rem;
+  line-height: 1.1;
+  background: linear-gradient(45deg, var(--gold), #ffffff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  position: relative;
+  display: inline-block;
+}
+
+.elegant-title::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  right: 0;
+  width: 60%;
+  height: 2px;
+  background: var(--gold);
+}
+
+.luxury-bio {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  color: var(--gold);
+  max-width: 600px;
+}
+
+.badge-container {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.prestige-badge {
+  background: rgba(197, 164, 126, 0.1);
+  padding: 1.2rem 2rem;
+  border-radius: 3px;
+  border: 1px solid var(--gold);
+  backdrop-filter: blur(5px);
+  transition: 0.3s;
+  color: var(--gold);
+}
+
+.prestige-badge:hover {
+  background: rgba(197, 164, 126, 0.2);
+  transform: translateY(-3px);
+}
+
+.social-links-luxury {
+  display: flex;
+  gap: 2rem;
+}
+
+.social-icon-luxury {
+  font-size: 1.8rem;
+  color: var(--gold);
+  transition: 0.3s;
+  border: 1px solid var(--gold);
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  gap: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  & li {
+      height: auto;
+      position: relative;
+  }
+}
+
+.social-icon-luxury:hover {
+  background: var(--gold);
+  color: var(--deep-navy);
+}
+
+.cta-luxury {
+  background: linear-gradient(45deg, var(--gold), #B08F6E);
+  color: var(--deep-navy);
+  padding: 1.3rem 3rem;
+  border: none;
+  border-radius: 0;
+  font-weight: 700;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid var(--gold);
+  transition: 0.3s;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.cta-luxury::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg,
+          transparent,
+          rgba(255, 255, 255, 0.3),
+          transparent);
+  transition: 0.5s;
+}
+
+.cta-luxury:hover::before {
+  left: 100%;
+}
+
+@media (max-width: 768px) {
+  .luxury-hero {
+      grid-template-columns: 1fr;
+      /* padding-top: 100px; */
+  }
+
+  .luxury-image {
+      height: 450px;
+      transform: rotateY(0);
+  }
+
+  .elegant-title {
+      font-size: 3rem;
+  }
+
+  .prestige-badge {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      justify-content: center;
+  }
+}
+
+
+
+
+
+/* Benefits , Clear Exercises , Diet Plan , Measurements , Join */
+.unified-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+  border-bottom: 3px solid var(--gold);
+}
+@media (max-width: 767px) {
+  .unified-section {
+    gap: 2rem;
+  }
+}
+
+
+
+
+
+/* Exercises Card => At ClearExercises Section */
+.card-header {
+  background: linear-gradient(135deg, var(--burgundy), var(--gold));
+}
+
+
+
+
+
+/* Component At Join Section */
+.unified-form {
+  margin-top: 2rem;
+}
+
+.unified-form input,
+.unified-form select {
+  width: 100%;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+  background: rgba(244, 240, 236, 0.1);
+  border: 1px solid rgba(197, 164, 126, 0.3);
+  color: var(--ivory);
+}
+
+.unified-form button {
+  width: 100%;
+  padding: 1.2rem;
+  background: var(--gold);
+  color: var(--deep-navy);
+  border: none;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.unified-benefit i {
+  color: var(--gold);
+  font-size: 1.5rem;
+  min-width: 40px;
+}
+
+@media (max-width: 768px) {
+  .unified-section {
+      grid-template-columns: 1fr;
+      padding: 100px 5% 50px;
+  }
 }
