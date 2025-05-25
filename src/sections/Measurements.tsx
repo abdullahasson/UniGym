@@ -10,7 +10,7 @@ export default function Measurements() {
 
             <div className="flex flex-col">
                 <h2 className="title">معلومات دقيقة </h2>
-                <p className="text-lg text-[var(--gold)] font-semibold">سأقوم بالاطلاع على المعلومات التي تحتاجها لتنظيم نظام غذائي مرن وتوفير الأدوات المناسبة للتدريب والحصول على مساعدة في تحسين النظام الخاص بك.</p>
+                <p className="text-lg text-[var(--gold)] font-semibold">أدوات ذكية لمراقبة كل تفصيل: من معدل الحرق إلى تطور القوة والتحمل. تقارير مفصَّلة تساعدك أنت ومدربك على ضبط الخطة لتحقيق أقصى استفادة.</p>
             </div>
         </section>
     )

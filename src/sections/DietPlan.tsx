@@ -6,7 +6,7 @@ export default function DietPlan() {
         <section className="unified-section">
             <div className="flex flex-col">
                 <h2 className="title">نظام غذائي مرن</h2>
-                <p className="text-lg text-[var(--gold)] font-semibold">سأقوم بالاطلاع على المعلومات التي تحتاجها لتنظيم نظام غذائي مرن وتوفير الأدوات المناسبة للتدريب والحصول على مساعدة في تحسين النظام الخاص بك.</p>
+                <p className="text-lg text-[var(--gold)] font-semibold">لا مزيد من الأنظمة القاسية! صمم خطة غذائية تتكيف مع ذوقك وأهدافك، بدعم من مدربين خبراء. واجباتك المفضلة وأطباق جديدة شهية—وكلها تحقق نتائجَ استثنائية.</p>
             </div>
             <div className="exercise-card flex-1 border border-[var(--gold)] transition-all rounded-xl overflow-hidden">
                 <DietCard />

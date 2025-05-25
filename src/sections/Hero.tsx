@@ -2,7 +2,7 @@
 import Image from "next/image";
 import { Facebook, Instagram, Linkedin } from "lucide-react"
 // Images
-import Image1 from "../../public/images/placeholder.svg";
+import Image1 from "../../public/images/placeholder (1).svg";
 
 
 export default function Hero() {
@@ -10,7 +10,7 @@ export default function Hero() {
         <section className="border-b-4 border-[#C5A47E] py-20 px-[5%]">
             <div className="min-h-screen grid md:grid-cols-2 items-center gap-16">
                 <div className="relative max-w-[550px] perspective-1000">
-                    <Image src={Image1} alt="[اسمك]" className="w-full h-[650px] rounded-sm object-cover border-4 border-[#C5A47E] shadow-[0_30px_50px_rgba(0,0,0,0.3)] luxury-image transition-transform duration-500" />
+                    <Image src={Image1} alt="[اسمك]" className="w-full h-full rounded-sm object-cover border-4 border-[#C5A47E] shadow-[0_30px_50px_rgba(0,0,0,0.3)] luxury-image transition-transform duration-500" />
                 </div>
                 <div className="text-[#F4F0EC] flex flex-col items-start gap-9">
                     <h1 className="title">

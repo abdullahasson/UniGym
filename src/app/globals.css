@@ -9,6 +9,7 @@
   --burgundy: #6A2E35;
   --ivory: #F4F0EC;
   --dark-charcoal: #2A2A2A;
+  --bgmain: #101828;
 
   
   padding: 0;
@@ -147,6 +148,10 @@ section {
   padding: 80px 5%;
 }
 
+.dashboard * {
+  font-family: 'Cairo' !important;
+}
+
 
 
 
@@ -173,6 +178,15 @@ section {
   .title {
       font-size: 2rem;
   }
+}
+
+
+.nav-link {
+  @apply flex items-center justify-between pr-4 pl-2 py-3 w-full bg-transparent hover:bg-purple-500/5 hover:text-purple-500 border-r-4 hover:border-purple-500 transition-all
+}
+
+.nav-link.active {
+  @apply text-purple-500 bg-purple-500/5 border-purple-500
 }
 
 

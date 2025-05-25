@@ -10,3 +10,12 @@ export interface ExercisesCardProps {
     secondaryMuscles : string[];
     instructions : string[]
 }
+
+// Overview
+export interface OverviewProps {
+    text: string;
+    percentage: number;
+    value: string;
+    // chartColor: string;
+    // chartData: ChartData[];
+}

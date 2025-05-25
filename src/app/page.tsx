@@ -1,5 +1,5 @@
 // Next
-import Link from "next/link"
+// import Link from "next/link"
 // Sections
 import Hero from "@/sections/Hero";
 import Benefits from "@/sections/Benefits";
@@ -27,14 +27,14 @@ export default function Home() {
 
 
       {/* هذا القسم يوجد فقط عن عرض المنتج و يتم حذف اثناء التخصيص للزبون */}
-      <section className="unified-section">
+      {/* <section className="unified-section">
         <h2 className="title">انتهى قسم الموقع يمكنك الاطلاع على لوحة التحكم</h2>
         <div className="flex items-center justify-end">
           <Link href="/dashboard" className="cta-luxury">
             لوحة التحكم
           </Link>
         </div>
-      </section>
+      </section> */}
     </div>
   );
 }
